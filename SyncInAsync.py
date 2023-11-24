@@ -1,3 +1,5 @@
+# SyncInAsync uses only built-in libraries, you can just download this .py and use it in your projects!
+
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, Any
