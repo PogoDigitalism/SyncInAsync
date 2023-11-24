@@ -11,6 +11,9 @@ class SyncInAsync:
         Recommended to be instanced in a coroutine.
 
         POOL: [Optional] Include a preset ThreadPoolExecutor, will create a default ThreadPoolExecutor otherwise (with the max amount of max_workers)
+
+        max_workers  = os.cpu_count() * 5
+        
         """
 
         self._POOL = POOL if POOL else ThreadPoolExecutor()
