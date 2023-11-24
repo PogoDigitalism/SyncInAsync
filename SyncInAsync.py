@@ -12,7 +12,7 @@ class SyncInAsync:
 
         POOL: [Optional] Include a preset ThreadPoolExecutor, will create a default ThreadPoolExecutor otherwise (with the max amount of max_workers)
 
-        max_workers  = os.cpu_count() * 5
+        The default max_workers amount is os.cpu_count() * 5
         
         """
 
