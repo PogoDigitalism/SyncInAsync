@@ -26,14 +26,15 @@ class SyncInAsync:
             self = args[0]
             self._ARGS = args
             self._KWARGS = kwargs
-
+            self._result = None
+            
             return await func(*args, **kwargs)
 
         def wrapped(*args, **kwargs):
             self = args[0]
             self._ARGS = args
             self._KWARGS = kwargs
-
+            
             return func(*args, **kwargs)
 
         if asyncio.iscoroutinefunction(func):
@@ -76,8 +77,6 @@ class SyncInAsync:
 
         Don't forget to await!
         """
-
-        self._result = None
 
         self._future: asyncio.Future = self._LOOP.run_in_executor(self._POOL, partial(func, **kwargs), *args)
 
