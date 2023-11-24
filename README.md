@@ -1,7 +1,7 @@
 # SyncInAsync
 
 ## Run synchronous code in asynchronous coroutines without blocking the event loop! ☑️
-### Especially useful for asynchronous libraries like FastAPI, Discord.py etc.
+Especially useful for asynchronous libraries like FastAPI, Discord.py etc.
 
 
 ## HOW IT WORKS:
