@@ -9,5 +9,3 @@
 2. This execution happens through Async IO's run_in_executor.
 3. run_in_executor returns a Future object which is then used to return the Future's result.
 4. This result is the result of your synchronous function!
-
-⭐'s are appreciated.
