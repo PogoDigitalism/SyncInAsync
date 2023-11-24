@@ -11,5 +11,6 @@ Especially useful for asynchronous libraries like FastAPI, Discord.py etc.
 4. This result is the result of your synchronous function!
 
 
-⚠️Try to prevent too many threads running concurrently: 
+⚠️Try to prevent too many threads running concurrently:
+
 *If max_workers is None or not given, it will default to the number of processors on the machine, multiplied by 5, assuming that ThreadPoolExecutor is often used to overlap I/O instead of CPU work and the number of workers should be higher than the number of workers for ProcessPoolExecutor.* [concurrent.futures docs](https://docs.python.org/3/library/concurrent.futures.html)
