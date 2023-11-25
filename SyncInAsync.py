@@ -15,7 +15,6 @@ class SyncInAsync:
         The default max_workers amount is os.cpu_count() * 5
         
         """
-
         self._POOL = POOL if POOL else ThreadPoolExecutor()
         self._LOOP = asyncio.get_event_loop()
 
@@ -46,7 +45,6 @@ class SyncInAsync:
         """
         Not functional.
         """
-
         try:
             pass
         except asyncio.exceptions.CancelledError:
@@ -59,12 +57,9 @@ class SyncInAsync:
         
         example: SIA.Wrap(ImageGenerator, CONFIG.Sizing, BackgroundColour = CONFIG.Colour)
 
-
         Wrap the function automatically in an Async IO Task.
-
         Don't forget to await the returned task!
         """
-
         return self._LOOP.create_task(self.Call(func, *args, **kwargs))
 
     @__setattrs
@@ -77,7 +72,6 @@ class SyncInAsync:
 
         Don't forget to await!
         """
-
         self._future: asyncio.Future = self._LOOP.run_in_executor(self._POOL, partial(func, **kwargs), *args)
 
         self._result = await self._future
@@ -88,7 +82,6 @@ class SyncInAsync:
         """
         Returns None if the Thread has not yet finished.
         """
-
         return self._result
     
     @property
@@ -96,13 +89,11 @@ class SyncInAsync:
         """
         Returns the latest passed args.
         """
-
         return self._ARGS if self._ARGS else None
     
     @property
     def kwargs(self) -> dict:
         """
         Returns the latest passed kwargs.
-        """
-        
+        """    
         return self._KWARGS if self._KWARGS else None
