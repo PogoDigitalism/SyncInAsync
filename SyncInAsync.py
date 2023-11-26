@@ -15,7 +15,7 @@ class SyncInAsync:
         The default max_workers amount is os.cpu_count() * 5
         
         """
-        self._POOL = POOL if POOL else ThreadPoolExecutor()
+        self._POOL = POOL or ThreadPoolExecutor()
         self._LOOP = asyncio.get_event_loop()
 
         self._result = None
@@ -89,11 +89,11 @@ class SyncInAsync:
         """
         Returns the latest passed args.
         """
-        return self._ARGS if self._ARGS else None
+        return self._ARGS or None
     
     @property
     def kwargs(self) -> dict:
         """
         Returns the latest passed kwargs.
         """    
-        return self._KWARGS if self._KWARGS else None
+        return self._KWARGS or None
