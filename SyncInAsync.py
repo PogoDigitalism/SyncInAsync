@@ -4,7 +4,7 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, Any
 from functools import partial
-
+£ gehakt
 class SyncInAsync:
     def __init__(self, POOL: ThreadPoolExecutor = None):
         """
