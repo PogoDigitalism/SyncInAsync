@@ -68,7 +68,7 @@ class SyncInAsync:
         Call your earlier set synchronous function and submits it to the ThreadPoolExecutor.
         You can pass regular and keyword arguments in this method.
         
-        example: SIA.Wrap(ImageGenerator, CONFIG.Sizing, BackgroundColour = CONFIG.Colour)
+        example: SIA.Call(ImageGenerator, CONFIG.Sizing, BackgroundColour = CONFIG.Colour)
 
         Don't forget to await!
         """
