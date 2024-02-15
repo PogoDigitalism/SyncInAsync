@@ -58,7 +58,6 @@ class SyncInAsync:
         example: SIA.Wrap(ImageGenerator, CONFIG.Sizing, BackgroundColour = CONFIG.Colour)
 
         Wrap the function automatically in an Async IO Task.
-        Don't forget to await the returned task!
         """
         return self._LOOP.create_task(self.Call(func, *args, **kwargs))
 
