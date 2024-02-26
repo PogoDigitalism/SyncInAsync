@@ -8,8 +8,8 @@ from functools import partial
 class SyncInAsync:
     def __init__(self, POOL: ThreadPoolExecutor = None):
         """
-        Recommended to be instanced in a coroutine.
-
+        Requires an existing and active event loop.
+        
         POOL: [Optional] Include a preset ThreadPoolExecutor, will create a default ThreadPoolExecutor otherwise (with the max amount of max_workers)
 
         The default max_workers amount is os.cpu_count() * 5
